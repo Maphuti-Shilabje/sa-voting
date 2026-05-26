@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Database Files
+individual_votes.json
+voted_ids.json
+results.json

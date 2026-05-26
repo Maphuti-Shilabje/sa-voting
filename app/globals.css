@@ -1,42 +1,173 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --sa-green: #007749;
+  --sa-gold: #FFB81C;
+  --sa-black: #000000;
+  --sa-white: #FFFFFF;
+  --sa-red: #E03C31;
+  --sa-blue: #001489;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  /* Pastel versions for background */
+  --bg-color: #f0f4f8;
+  --mesh-1: rgba(0, 119, 73, 0.08); /* faint green */
+  --mesh-2: rgba(255, 184, 28, 0.1);  /* faint gold */
+  --mesh-3: rgba(0, 20, 137, 0.06);   /* faint blue */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(at 0% 0%, var(--mesh-1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, var(--mesh-2) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--mesh-3) 0px, transparent 50%);
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Official Header Gradient */
+.navbar-official {
+  background: linear-gradient(to right, var(--sa-black) 0%, var(--sa-green) 100%);
+  border-bottom: 5px solid var(--sa-gold);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Glassmorphism Cards */
+.card {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05) !important;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.card-dark-glass {
+  background-color: rgba(15, 20, 35, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.card-header, .card-footer {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6, .display-1, .display-4 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1a1a2e;
+}
+
+/* Sleek Buttons */
+.btn {
+  border-radius: 50rem !important; /* Pill shape */
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0052cc, #001489) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00b06b, var(--sa-green)) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-dark {
+  background: linear-gradient(135deg, #343a40, #000) !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* Frosted Inputs & Selects */
+.form-control, .form-select {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 1rem !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 119, 73, 0.25) !important;
+  border-color: var(--sa-green) !important;
+}
+
+/* Glassy Lists */
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(5px);
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem !important;
+  transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  transform: translateX(4px);
+}
+
+.list-group-item.active {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  /* The inline color will provide the border color from React */
+}
+
+/* Progress bar fix for pill shape */
+.progress {
+  border-radius: 50rem !important;
+  background-color: rgba(0,0,0,0.05) !important;
+}
+
+/* Biometric Scan Animation */
+.scan-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border: 2px solid rgba(13, 110, 253, 0.3);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #00ff00;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.5);
+  animation: scan 2s infinite linear;
+}
+
+@keyframes scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.face-icon {
+  font-size: 80px;
+  line-height: 200px;
+  color: rgba(0,0,0,0.2);
 }
