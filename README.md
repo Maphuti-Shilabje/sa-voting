@@ -5,6 +5,8 @@ A "State-of-the-Art" mocked prototype for a modern, secure, and transparent Sout
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-Prototype-orange.svg)
 
+![Dashboard](./public/dashborad.png)
+
 ## 🌟 Key Features
 
 ### 1. 🗳️ Hybrid Voting Model
