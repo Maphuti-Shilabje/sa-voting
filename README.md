@@ -34,7 +34,7 @@ A "State-of-the-Art" mocked prototype for a modern, secure, and transparent Sout
 ### Installation
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/sa-voting-mvp.git
+    git clone https://github.com/maphuti-shilabje/sa-voting-mvp.git
     cd sa-voting-mvp
     ```
 2.  Install dependencies:
